@@ -1,1 +1,47 @@
-<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p>The evaluation of the Composed Video Retrieval Challenge will be based on the Recall metric, which measures how effectively a model retrieves the correct target video within the top-ranked results. Since video retrieval tasks require ranking a large pool of candidate videos, recall-based evaluation provides a robust measure of how often the correct video appears within the top retrieved results.</p>
+
+
+<h4>Evaluation Criteria</h4>
+<p>
+    Participants' models will be evaluated based on their ability to accurately retrieve the modified video given an original video and a modification text. The primary factors considered in evaluation include:
+    <ul>
+        <li>Relevance: The retrieved video must match both the original video’s context and the modifications described in the text query.</li>
+        <li>Ranking Performance: Higher-ranked correct results indicate better performance, as users typically expect relevant videos to appear within the top recommendations.</li>
+        <li>Generalization: The model should be effective across various video categories, object transformations, scene changes, and modifications of different complexity levels.</li>
+    </ul>
+</p>
+
+<h4>Evaluation Metric: Recall@K</h4>
+<p>
+    The primary evaluation metric used in this challenge is Recall@K (R@K), which measures the percentage of queries where the correct target video appears within the top-K retrieved results. The recall scores will be computed at different values of K, including 1, 5, 10, and 50, providing insights into both precision at top ranks and broader retrieval performance.
+</p>
+<p>
+    The evaluation results will be computed using the following metrics:
+    <ul>
+        <li>R1: Measures the percentage of queries where the correct video is retrieved as the top result. This is the most stringent measure and indicates highly precise retrieval.</li>
+        <li>R5, R10, R50: These metrics indicate how often the correct video appears within the top-5, top-10, and top-50 results, respectively. Higher values suggest better recall performance.</li>
+        <li>meanR3 & meanR4: These values represent the mean rank-based recall, averaging retrieval accuracy over multiple ranks to give a holistic performance measure.</li>
+    </ul>
+</p>
+<p>
+    Submission format for evaluation results:
+    ```
+    eval_result = {
+        "R1": round(tr1, 2),   # Recall@1 - Correct video retrieved at top-1 position
+        "R5": round(tr5, 2),   # Recall@5 - Correct video retrieved within top-5 results
+        "R10": round(tr10, 2), # Recall@10 - Correct video retrieved within top-10 results
+        "R50": round(tr50, 2), # Recall@50 - Correct video retrieved within top-50 results
+        "meanR3": round(tr_mean3, 2), # Mean recall across top-3 ranks
+        "meanR4": round(tr_mean4, 2), # Mean recall across top-4 ranks
+    }
+    ```    
+</p>
+
+
+<h4>Interpreting the Results</h4>
+<p>
+    A higher Recall@K value indicates that the retrieval model is effectively surfacing the correct video in the top results, improving user experience and search efficiency. Lower recall scores suggest that the model struggles to capture the compositional modifications accurately, which may require improvements in video-text understanding, feature alignment, or ranking strategies.
+</p>
+<p>
+    Participants are encouraged to optimize their models to maximize Recall@1 and Recall@5, as retrieving relevant videos in the top few positions is critical for real-world applications. We look forward to seeing innovative approaches that push the boundaries of multi-modal retrieval!
+</p>

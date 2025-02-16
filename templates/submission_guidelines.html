@@ -1,1 +1,21 @@
 <p>Submit any blank file here to see a random number generated for your submission. If you get lucky, you might reach the top of the leaderboard.</p>
+
+<p>
+    The primary evaluation metric used in this challenge is Recall@K (R@K), which measures the percentage of queries where the correct target video appears within the top-K retrieved results. The recall scores will be computed at different values of K, including 1, 5, 10, and 50, providing insights into both precision at top ranks and broader retrieval performance.
+</p>
+
+<p>
+    The evaluation results will be computed using the following format:
+    ```
+    eval_result = {
+        "R1": round(tr1, 2),   # Recall@1 - Correct video retrieved at top-1 position
+        "R5": round(tr5, 2),   # Recall@5 - Correct video retrieved within top-5 results
+        "R10": round(tr10, 2), # Recall@10 - Correct video retrieved within top-10 results
+        "R50": round(tr50, 2), # Recall@50 - Correct video retrieved within top-50 results
+        "meanR3": round(tr_mean3, 2), # Mean recall across top-3 ranks
+        "meanR4": round(tr_mean4, 2), # Mean recall across top-4 ranks
+    }
+    ```
+</p>
+
+<p>Good luck!</p>

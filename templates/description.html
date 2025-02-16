@@ -8,8 +8,18 @@
 </p>
 
 
-<h4>Task</h4>
-<!-- <p>Complex Video Reasoning and Robustness Evaluation Suite (CVRR-ES) is a comprehensive benchmark designed  to assess the reasoning and robustness capabilities of Video Large Language Models (Video-LLMs) in real-world scenarios. Unlike existing video benchmarks that focus primarily on simple video comprehension, CVRR-ES evaluates models on their ability to handle intricate reasoning tasks and robustly respond to diverse user prompts across a range of realworld contexts. The benchmark comprises 11 diverse real-world video category dimensions, including multiple actions in a single video, fine-grained action understanding, partial actions, time order understanding, non-existent actions with existent scene depictions, non-existent actions with non-existent scene depictions, continuity and object instance count, unusual and physically anomalous activities, interpretation of social context, understanding of emotional context, and interpretation of visual context. </p> -->
+<h4>Task Description</h4>
+<p>
+    In the CoVR task, we invite you to develop models that can understand an input video’s content, grasp textual instructions describing modifications, and then retrieve the correct video that reflects these compositional changes. Unlike traditional video retrieval tasks, which focus on finding videos based on a single textual query, this challenge introduces an additional layer of complexity: <strong>modification-based retrieval.</strong> Given an original video and its corresponding description, along with a separate modification text specifying certain changes, the goal is to retrieve a new video that accurately reflects these changes while preserving the relevant aspects of the original scene.
+</p>
+
+<p>
+    For example, if the given video shows a “man riding a bicycle in a park during the daytime,” and the modification text states, “change the bicycle to a skateboard and make it nighttime,” the ideal retrieval system should be able to identify a video where the same person or a similar context exists, but now with the skateboard instead of the bicycle and the scene set at night. The challenge lies in <strong>understanding the semantics of both the original input video and modification text</strong> and effectively retrieving a video that best matches the requested changes from a large pool of candidate videos.
+</p>
+
+<p>
+    This task is highly relevant to real-world applications such as <strong>content-based video recommendation, intelligent video editing, creative media generation, and AI-driven content search engines</strong>. By participating, you will contribute to the advancement of multi-modal AI systems capable of bridging the gap between vision and language in a more compositional and structured way. We encourage participants to explore state-of-the-art techniques in <strong>video-language modeling, multi-modal representation learning, and retrieval algorithms</strong> to tackle this challenging yet impactful problem.
+</p>
 
 
 <h4>Dataset</h4>
@@ -18,7 +28,7 @@
 
 <h4>Challenge Phases</h4>
 <ol type="1">
-    <li>Validation Phase: Participants submit their model predictions on the validation dataset. Participants can choose to make submissions public or private during this phase and the number of submissions will not be limited.</li>
+    <li>Validation Phase: During the validation phase, we provide the validation dataset along with its ground truth annotations to all participants. This allows participants to benchmark their models using the provided validation data. Participants are encouraged to explore and utilize any open-source multi-modal model for this task and compare their results against the baseline model. To assist with evaluation, we also provide baseline model implementations and scripts to help participants understand how to process the dataset and generate predictions. In this phase, participants can submit their model predictions on the validation set leaderboard. They have the flexibility to choose whether to make their submissions public or private, depending on their preference. Additionally, there will be no restriction on the number of submissions, allowing participants to iteratively refine and improve their models before proceeding to the test phase.</li>
     <li>Test Phase: Participants submit their model predictions on the test dataset. The final evaluation and ranking will be based on the performance on this split. Submissions are limited in this phase.</li>
 </ol>
 
